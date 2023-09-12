@@ -5,6 +5,8 @@ import 'package:weather/features/presentation/pages/weather_screen/bloc/weather_
 import 'package:weather/features/presentation/pages/welcome_screen/welcome_screen.dart';
 import 'package:weather/repositories/weather_repository/weather_repository.dart';
 
+import 'features/presentation/pages/search_weather_screen/search_weather_screen.dart';
+
 class WeatherApp extends StatelessWidget {
   const WeatherApp({super.key});
 

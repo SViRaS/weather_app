@@ -15,4 +15,17 @@ class AppTextStyle {
             blurRadius: 4.r,
             offset: const Offset(0, 4))
       ]);
+
+  final goToTheForecastText = TextStyle(
+    fontSize: 26.sp,
+    height: 31 / 26,
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+  );
+
+  final textFieldText = TextStyle(
+      fontSize: 21.sp,
+      fontWeight: FontWeight.w600,
+      color: AppColors.appbodyColor,
+      height: 21 / 21);
 }
