@@ -1,14 +1,14 @@
-// part of 'geolocation_bloc.dart';
+part of 'geolocation_bloc.dart';
 
-// @immutable
-// sealed class GeolocationState {}
+@immutable
+sealed class GeolocationState {}
 
-// final class GeolocationInitial extends GeolocationState {}
+final class GeolocationInitial extends GeolocationState {}
 
-// final class GeolocationLoaded extends GeolocationState {
-//   final Position position;
+class GeolocationLoading extends GeolocationState {}
 
-//   GeolocationLoaded(this.position);
-// }
+class GeolocationLoaded extends GeolocationState {
+  final WeatherModel locationWeather;
 
-// final class GeolocationLoading extends GeolocationState {}
+  GeolocationLoaded(this.locationWeather);
+}

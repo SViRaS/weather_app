@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:weather/features/presentation/pages/weather_screen/weather_screen.dart';
+import 'package:weather/features/resources/app_constants/resources_app.dart';
 
 class SearchWeatherScreen extends StatefulWidget {
   const SearchWeatherScreen({Key? key}) : super(key: key);
@@ -8,40 +12,64 @@ class SearchWeatherScreen extends StatefulWidget {
 }
 
 class _CityScreenState extends State<SearchWeatherScreen> {
- final TextEditingController _textController = TextEditingController();
+  final TextEditingController textController = TextEditingController();
 
-  String get _text => _textController.text;
+  String get _text => textController.text;
 
   @override
   void dispose() {
-    _textController.dispose();
+    textController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('City Search')),
-      body: Row(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: TextField(
-                controller: _textController,
-                decoration: const InputDecoration(
-                  labelText: 'City',
-                  hintText: 'Chicago',
-                ),
-              ),
-            ),
+      backgroundColor: AppColors.appbodyColor,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(66.h),
+        child: AppBar(
+          backgroundColor: AppColors.appbarColor,
+          title: Text(
+            'Search City',
+            style: AppTextStyle().appBarText,
           ),
-          IconButton(
-            key: const Key('searchPage_search_iconButton'),
-            icon: const Icon(Icons.search, semanticLabel: 'Submit'),
-            onPressed: () => Navigator.of(context).pop(_text),
-          )
-        ],
+          centerTitle: true,
+          leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: SvgPicture.asset(
+                'assets/icons/arrow_left.svg',
+                width: 32.w,
+                height: 32.h,
+              )),
+        ),
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 24.h,
+            ),
+            TextField(
+                controller: textController,
+                keyboardType: TextInputType.text,
+                style: AppTextStyle().textFieldText,
+                textCapitalization: TextCapitalization.sentences,
+                decoration: AppDecorations().textFieldDecoration),
+            SizedBox(
+              height: 36.h,
+            ),
+            TextButton(
+                onPressed: () {
+                  return Navigator.of(context).pop(_text);
+                },
+                child: Text('Go to the forecast',
+                    style: AppTextStyle().goToTheForecastText))
+          ],
+        ),
       ),
     );
   }

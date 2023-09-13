@@ -8,4 +8,5 @@ class AppColors {
   static Color shadowColor = const Color(0xFF000000).withOpacity(0.40);
   static const textfieldColor = Color(0xFFEAE5E5);
   static const redColor = Color(0xFFB82121);
+  static const greyColor = Color(0xFF8C8C8C);
 }
