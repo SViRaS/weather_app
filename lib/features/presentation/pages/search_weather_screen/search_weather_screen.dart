@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:weather/features/presentation/pages/weather_screen/weather_screen.dart';
-import 'package:weather/features/resources/app_constants/decoration_textfield.dart';
 import 'package:weather/features/resources/app_constants/resources_app.dart';
-
-import '../../../resources/app_constants/app_colors.dart';
 
 class SearchWeatherScreen extends StatefulWidget {
   const SearchWeatherScreen({Key? key}) : super(key: key);
@@ -29,22 +26,25 @@ class _CityScreenState extends State<SearchWeatherScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.appbodyColor,
-      appBar: AppBar(
-        backgroundColor: AppColors.appbarColor,
-        title: Text(
-          'Search City',
-          style: AppTextStyle().appBarText,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(66.h),
+        child: AppBar(
+          backgroundColor: AppColors.appbarColor,
+          title: Text(
+            'Search City',
+            style: AppTextStyle().appBarText,
+          ),
+          centerTitle: true,
+          leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: SvgPicture.asset(
+                'assets/icons/arrow_left.svg',
+                width: 32.w,
+                height: 32.h,
+              )),
         ),
-        centerTitle: true,
-        leading: IconButton(
-            onPressed: () {
-              MaterialPageRoute(builder: (context) => const WeatherScreen());
-            },
-            icon: SvgPicture.asset(
-              'assets/icons/arrow_left.svg',
-              width: 32.w,
-              height: 32.h,
-            )),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -58,7 +58,7 @@ class _CityScreenState extends State<SearchWeatherScreen> {
                 keyboardType: TextInputType.text,
                 style: AppTextStyle().textFieldText,
                 textCapitalization: TextCapitalization.sentences,
-                decoration: AppDecorationTextField().textFieldDecoration),
+                decoration: AppDecorations().textFieldDecoration),
             SizedBox(
               height: 36.h,
             ),

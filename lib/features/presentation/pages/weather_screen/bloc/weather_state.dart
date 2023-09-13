@@ -11,9 +11,6 @@ class WeatherLoaded extends WeatherState {
   final WeatherModel weatherModel;
 
    WeatherLoaded(this.weatherModel); 
-   
-
-  get location => null;
 }
 
 

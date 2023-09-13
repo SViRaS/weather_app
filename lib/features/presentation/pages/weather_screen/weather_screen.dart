@@ -47,8 +47,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 if (state is WeatherLoaded) {
                   return AppBarText(state.weatherModel);
                 }
-                return const CircularProgressIndicator(
-                  color: Colors.blue,
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.transparent,
+                  ),
                 );
               },
             ),
@@ -99,8 +101,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 if (state is WeatherLoaded) {
                   return MainCard(state.weatherModel);
                 }
-                return const CircularProgressIndicator(
-                  color: Colors.blue,
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.appbarColor
+                  ),
                 );
               },
             ),

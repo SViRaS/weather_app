@@ -28,4 +28,11 @@ class AppTextStyle {
       fontWeight: FontWeight.w600,
       color: AppColors.appbodyColor,
       height: 21 / 21);
+
+  final pleaseWaitText = TextStyle(
+      color: Colors.white,
+      decoration: TextDecoration.none,
+      fontSize: 20.sp,
+      height: 20 / 20,
+      );
 }
