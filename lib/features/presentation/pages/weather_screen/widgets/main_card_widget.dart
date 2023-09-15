@@ -20,7 +20,7 @@ class MainCard extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(4.r)),
       ),
       child: Padding(
-          padding: EdgeInsets.only(left: 12.w, bottom: 8.h, right: 16.w),
+          padding: EdgeInsets.only(left: 12.w, bottom: 8.h, right: 8.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -150,6 +150,7 @@ class MainCard extends StatelessWidget {
                   ),
                   SizedBox(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
@@ -158,9 +159,7 @@ class MainCard extends StatelessWidget {
                               width: 12.w,
                               height: 12.h,
                             ),
-                            SizedBox(
-                              width: 2.w,
-                            ),
+                            SizedBox(width: 2.w,),
                             Text('${weather.max_tempCelsium_of_day}°',
                                 style: TextStyle(
                                     fontSize: 14.sp,
@@ -175,9 +174,7 @@ class MainCard extends StatelessWidget {
                               height: 12.h,
                               width: 12.w,
                             ),
-                            SizedBox(
-                              width: 2.w,
-                            ),
+                            SizedBox(width: 2.w,),
                             Text('${weather.min_tempCelsium_of_day}°',
                                 style: TextStyle(
                                     fontSize: 14.sp,
