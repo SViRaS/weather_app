@@ -47,10 +47,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 if (state is WeatherLoaded) {
                   return AppBarText(state.weatherModel);
                 }
-                return const Center(
-                  child: CircularProgressIndicator(
-                    color: Colors.transparent,
-                  ),
+                return const CircularProgressIndicator(
+                  color: Colors.transparent,
                 );
               },
             ),
@@ -69,8 +67,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
             actions: [
               IconButton(
                   onPressed: () async {
-                    var tappedName =
-                        await Navigator.push(context, MaterialPageRoute(
+                    
+                    var tappedName = await Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
                         return const SearchWeatherScreen();
                       },
@@ -103,7 +101,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 }
                 return const Center(
                   child: CircularProgressIndicator(
-                    color: AppColors.appbarColor
+                    color: Colors.blue,
                   ),
                 );
               },

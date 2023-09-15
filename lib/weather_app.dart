@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather/features/presentation/pages/weather_screen/bloc/weather_bloc.dart';
-import 'package:weather/features/presentation/pages/welcome_screen/welcome_screen.dart';
 import 'package:weather/repositories/weather_repository/weather_repository.dart';
+import 'package:weather/router/routes.dart';
 
 class WeatherApp extends StatelessWidget {
   const WeatherApp({super.key});
@@ -19,7 +19,8 @@ class WeatherApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: const WelcomeScreen(),
+          initialRoute: '/',
+          routes: routes,
         ),
       ),
     );

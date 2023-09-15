@@ -8,10 +8,9 @@ import '../../../../../repositories/weather_repository/models/weather_model.dart
 
 class DayContainer extends StatelessWidget {
   WeatherModel weather;
-  String data;
   DayContainer(
-    this.data,
     this.weather,
+    
   {super.key});
 
   @override
@@ -28,7 +27,7 @@ class DayContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-           Text(data, style: TextStyle(color: Colors.black, fontSize:24.sp, height: 24 / 24),),
+           Text(weather.toString(), style: TextStyle(color: Colors.black, fontSize:24.sp, height: 24 / 24),),
             SizedBox(
               child: 
               Row(
