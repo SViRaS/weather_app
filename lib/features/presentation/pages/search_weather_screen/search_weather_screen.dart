@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:weather/features/presentation/pages/weather_screen/weather_screen.dart';
 import 'package:weather/features/resources/app_constants/resources_app.dart';
 
 class SearchWeatherScreen extends StatefulWidget {

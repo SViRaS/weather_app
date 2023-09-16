@@ -47,10 +47,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 if (state is WeatherLoaded) {
                   return AppBarText(state.weatherModel);
                 }
-                return const Center(
-                  child: CircularProgressIndicator(
-                    color: Colors.transparent,
-                  ),
+                return const CircularProgressIndicator(
+                  color: Colors.transparent,
                 );
               },
             ),
@@ -70,14 +68,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
               IconButton(
                   onPressed: () async {
                     var tappedName =
-                        await Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return const SearchWeatherScreen();
-                      },
-                    ));
+                        await Navigator.pushNamed(context, '/search_weather_screen');
 
                     if (tappedName != null) {
-                      weatherBloc.add(LoadWeatherData(tappedName, true));
+                      weatherBloc.add(LoadWeatherData(tappedName as String?, true));
                     }
                   },
                   //
@@ -99,11 +93,42 @@ class _WeatherScreenState extends State<WeatherScreen> {
               bloc: weatherBloc,
               builder: (context, state) {
                 if (state is WeatherLoaded) {
-                  return MainCard(state.weatherModel);
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      MainCard(state.weatherModel),
+                      SizedBox(
+                        height: 24.h,
+                      ),
+                      Text(
+                        'Forecast for next days',
+                        style: AppTextStyle().forecastForNextDaysText
+                      ),
+                      SizedBox(
+                        height: 16.h,
+                      ),
+                      DayContainer(
+                        weather_date: state.weatherModel.date_2th_day!.toInt(),
+                        weather_networkImage: state.weatherModel.networkImage_2th_day.toString(),
+                        weather_tempCelsium: state.weatherModel.tempCelsium_2th_day.toString(),
+                      ),
+                      SizedBox(
+                        height: 8.h,
+                      ),
+                      DayContainer(
+                        weather_date: state.weatherModel.date_3th_day!.toInt(),
+                        weather_networkImage: state.weatherModel.networkImage_3th_day.toString(),
+                        weather_tempCelsium: state.weatherModel.tempCelsium_3th_day.toString(),
+                      ),
+                        SizedBox(
+                        height: 8.h,
+                      ),
+                    ],
+                  );
                 }
                 return const Center(
                   child: CircularProgressIndicator(
-                    color: AppColors.appbarColor
+                    color: Colors.blue,
                   ),
                 );
               },
