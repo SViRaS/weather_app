@@ -24,15 +24,40 @@ class AppTextStyle {
   );
 
   final textFieldText = TextStyle(
-      fontSize: 21.sp,
-      fontWeight: FontWeight.w600,
-      color: AppColors.appbodyColor,
-      height: 21 / 21);
+    fontSize: 21.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.appbodyColor,
+    height: 21 / 21,
+  );
 
   final pleaseWaitText = TextStyle(
-      color: Colors.white,
-      decoration: TextDecoration.none,
-      fontSize: 20.sp,
-      height: 20 / 20,
-      );
+    color: Colors.white,
+    decoration: TextDecoration.none,
+    fontSize: 20.sp,
+    height: 20 / 20,
+  );
+
+  final mainCard14spText = TextStyle(
+    fontSize: 14.sp,
+    height: 14 / 14,
+    fontWeight: FontWeight.w600,
+  );
+
+  final mainCard16spText = TextStyle(
+    fontSize: 16.sp,
+    height: 16 / 16,
+    fontWeight: FontWeight.w600,
+  );
+
+  final mainCard35spText = TextStyle(
+    fontSize: 35.sp,
+    height: 35 / 35,
+    fontWeight: FontWeight.w700,
+  );
+
+  final forecastForNextDaysText = TextStyle(
+      fontSize: 24.sp,
+      height: 24 / 24,
+      fontWeight: FontWeight.bold,
+      color: AppColors.darkColor);
 }

@@ -13,30 +13,30 @@ class WeatherModel {
   int? date;
   String? networkImage;
   String? weatherCondition;
-  // int? date_2;
-  // double? tempCelsium_2;
-  // String? networkImage_2;
-  // int? date_3;
-  // double? tempCelsium_3;
-  // String? networkImage_3;
-  // int? date_4;
-  // double? tempCelsium_4;
-  // String? networkImage_4;
-  // int? date_5;
-  // double? tempCelsium_5;
-  // String? networkImage_5;
-  // int? date_6;
-  // double? tempCelsium_6;
-  // String? networkImage_6;
-  // int? date_7;
-  // double? tempCelsium_7;
-  // String? networkImage_7;
-  // int? date_8;
-  // double? tempCelsium_8;
-  // String? networkImage_8;
-  // int? date_9;
-  // double? tempCelsium_9;
-  // String? networkImage_9;
+  int? date_2th_day;
+  double? tempCelsium_2th_day;
+  String? networkImage_2th_day;
+  int? date_3th_day;
+  double? tempCelsium_3th_day;
+  String? networkImage_3th_day;
+  //  int? date_4th_day;
+  // double? tempCelsium_4th_day;
+  // String? networkImage_4th_day;
+  // int? date_5th_day;
+  // double? tempCelsium_5th_day;
+  // String? networkImage_5th_day;
+  // int? date_6th_day;
+  // double? tempCelsium_6th_day;
+  // String? networkImage_6th_day;
+  // int? date_7th_day;
+  // double? tempCelsium_7th_day;
+  // String? networkImage_7th_day;
+  // int? date_8th_day;
+  // double? tempCelsium_8th_day;
+  // String? networkImage_8th_day;
+  // int? date_9th_day;
+  // double? tempCelsium_9th_day;
+  // String? networkImage_9th_day;
 
 
   WeatherModel(
@@ -51,30 +51,30 @@ class WeatherModel {
       this.chance_of_rain,
       this.date,
       this.networkImage,
-      // this.date_2,
-      // this.networkImage_2,
-      // this.tempCelsium_2,
-      // this.date_3,
-      // this.networkImage_3,
-      // this.tempCelsium_3,
-      // this.date_4,
-      // this.networkImage_4,
-      // this.tempCelsium_4,
-      // this.date_5,
-      // this.networkImage_5,
-      // this.tempCelsium_5,
-      // this.date_6,
-      // this.networkImage_6,
-      // this.tempCelsium_6,
-      // this.date_7,
-      // this.networkImage_7,
-      // this.tempCelsium_7,
-      // this.date_8,
-      // this.networkImage_8,
-      // this.tempCelsium_8,
-      // this.date_9,
-      // this.networkImage_9,
-      // this.tempCelsium_9,
+      this.date_2th_day,
+      this.networkImage_2th_day,
+      this.tempCelsium_2th_day,
+      this.date_3th_day,
+      this.networkImage_3th_day,
+      this.tempCelsium_3th_day,
+      // this.date_4th_day,
+      // this.networkImage_4th_day,
+      // this.tempCelsium_4th_day,
+      // this.date_5th_day,
+      // this.networkImage_5th_day,
+      // this.tempCelsium_5th_day,
+      // this.date_6th_day,
+      // this.networkImage_6th_day,
+      // this.tempCelsium_6th_day,
+      // this.date_7th_day,
+      // this.networkImage_7th_day,
+      // this.tempCelsium_7th_day,
+      // this.date_8th_day,
+      // this.networkImage_8th_day,
+      // this.tempCelsium_8th_day,
+      // this.date_9th_day,
+      // this.networkImage_9th_day,
+      // this.tempCelsium_9th_day,
       this.weatherCondition,
       );
 
@@ -91,32 +91,32 @@ class WeatherModel {
     date = json['location']['localtime_epoch'];
     networkImage = json['current']['condition']['icon'];
     weatherCondition = json['current']['condition']['text'];
-    // date_2 = json['forecast']['forecastday'][1]['date_epoch'];
-    // tempCelsium_2 = json['forecast']['forecastday'][1]['day']['avgtemp_c'];
-    // networkImage_2 = json['forecast']['forecastday'][1]['day']['condition']['icon'];
-    // date_3 = json['forecast']['forecastday'][2]['date_epoch'];
-    // tempCelsium_3 = json['forecast']['forecastday'][2]['day']['avgtemp_c'];
-    // networkImage_3 = json['forecast']['forecastday'][2]['day']['condition']['icon'];
-    // date_4 = json['forecast']['forecastday'][3]['date_epoch'];
-    // tempCelsium_4 = json['forecast']['forecastday'][3]['day']['avgtemp_c'];
-    // networkImage_4 = json['forecast']['forecastday'][3]['day']['condition']['icon'];
-    // date_5 = json['forecast']['forecastday'][4]['date_epoch'];
-    // tempCelsium_5 = json['forecast']['forecastday'][4]['day']['avgtemp_c'];
-    // networkImage_5 = json['forecast']['forecastday'][4]['day']['condition']['icon'];
-    // date_6 = json['forecast']['forecastday'][5]['date_epoch'];
-    // tempCelsium_6 = json['forecast']['forecastday'][5]['day']['avgtemp_c'];
-    // networkImage_6 = json['forecast']['forecastday'][5]['day']['condition']['icon'];
-    // date_6 = json['forecast']['forecastday'][6]['date_epoch'];
-    // tempCelsium_6 = json['forecast']['forecastday'][6]['day']['avgtemp_c'];
-    // networkImage_6 = json['forecast']['forecastday'][6]['day']['condition']['icon'];
-    // date_7 = json['forecast']['forecastday'][7]['date_epoch'];
-    // tempCelsium_7 = json['forecast']['forecastday'][7]['day']['avgtemp_c'];
-    // networkImage_7 = json['forecast']['forecastday'][7]['day']['condition']['icon'];
-    // date_8 = json['forecast']['forecastday'][8]['date_epoch'];
-    // tempCelsium_8 = json['forecast']['forecastday'][8]['day']['avgtemp_c'];
-    // networkImage_8 = json['forecast']['forecastday'][8]['day']['condition']['icon'];
-    // date_9 = json['forecast']['forecastday'][9]['date_epoch'];
-    // tempCelsium_9 = json['forecast']['forecastday'][9]['day']['avgtemp_c'];
-    // networkImage_9 = json['forecast']['forecastday'][9]['day']['condition']['icon'];
+    date_2th_day = json['forecast']['forecastday'][1]['date_epoch'];
+    tempCelsium_2th_day = json['forecast']['forecastday'][1]['day']['avgtemp_c'];
+    networkImage_2th_day = json['forecast']['forecastday'][1]['day']['condition']['icon'];
+    date_3th_day = json['forecast']['forecastday'][2]['date_epoch'];
+    tempCelsium_3th_day = json['forecast']['forecastday'][2]['day']['avgtemp_c'];
+    networkImage_3th_day = json['forecast']['forecastday'][2]['day']['condition']['icon'];
+    // date_4th_day = json['forecast']['forecastday'][3]['date_epoch'];
+    // tempCelsium_4th_day = json['forecast']['forecastday'][3]['day']['avgtemp_c'];
+    // networkImage_4th_day = json['forecast']['forecastday'][3]['day']['condition']['icon'];
+    // date_5th_day = json['forecast']['forecastday'][4]['date_epoch'];
+    // tempCelsium_5th_day = json['forecast']['forecastday'][4]['day']['avgtemp_c'];
+    // networkImage_5th_day = json['forecast']['forecastday'][4]['day']['condition']['icon'];
+    // date_6th_day = json['forecast']['forecastday'][5]['date_epoch'];
+    // tempCelsium_6th_day = json['forecast']['forecastday'][5]['day']['avgtemp_c'];
+    // networkImage_6th_day = json['forecast']['forecastday'][5]['day']['condition']['icon'];
+    // date_6th_day = json['forecast']['forecastday'][6]['date_epoch'];
+    // tempCelsium_6th_day = json['forecast']['forecastday'][6]['day']['avgtemp_c'];
+    // networkImage_6th_day = json['forecast']['forecastday'][6]['day']['condition']['icon'];
+    // date_7th_day = json['forecast']['forecastday'][7]['date_epoch'];
+    // tempCelsium_7th_day = json['forecast']['forecastday'][7]['day']['avgtemp_c'];
+    // networkImage_7th_day = json['forecast']['forecastday'][7]['day']['condition']['icon'];
+    // date_8th_day = json['forecast']['forecastday'][8]['date_epoch'];
+    // tempCelsium_8th_day = json['forecast']['forecastday'][8]['day']['avgtemp_c'];
+    // networkImage_8th_day = json['forecast']['forecastday'][8]['day']['condition']['icon'];
+    // date_9th_day = json['forecast']['forecastday'][9]['date_epoch'];
+    // tempCelsium_9th_day = json['forecast']['forecastday'][9]['day']['avgtemp_c'];
+    // networkImage_9th_day = json['forecast']['forecastday'][9]['day']['condition']['icon'];
   }
 }

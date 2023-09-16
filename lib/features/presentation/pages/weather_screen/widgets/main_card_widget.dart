@@ -35,52 +35,46 @@ class MainCard extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(weather.localtime.toString(),
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    height: 14 / 14,
-                                    fontWeight: FontWeight.w600)),
+                            Text(
+                              weather.localtime.toString(),
+                              style: AppTextStyle().mainCard14spText,
+                            ),
                             SizedBox(
                               height: 4.h,
                             ),
                             Text(
-                                DateUtil.formattedDate_yMd(
+                                DateUtil.formattedDate_EEEE_MMM(
                                     DateTime.fromMillisecondsSinceEpoch(
                                         weather.date! * 1000)),
-                                style: TextStyle(
-                                    fontSize: 16.sp,
-                                    height: 16 / 16,
-                                    fontWeight: FontWeight.w600)),
+                                style: AppTextStyle().mainCard16spText),
                           ],
                         ),
                       ),
                     ],
                   ),
-                  Text('${weather.current_tempCelsium}°C',
-                      style: TextStyle(
-                          fontSize: 30.sp,
-                          height: 30 / 30,
-                          fontWeight: FontWeight.w800)),
+                  Text(
+                    '${weather.current_tempCelsium}°C',
+                    style: AppTextStyle().mainCard35spText,
+                  ),
                   Column(
                     children: [
-                      SizedBox(height: 4.h,),
+                      SizedBox(
+                        height: 4.h,
+                      ),
                       SizedBox(
                         width: 28.w,
                         height: 28.h,
-                        child: Image.network(
-                            'https:${weather.networkImage}'),
+                        child: Image.network('https:${weather.networkImage}'),
                       ),
                       SizedBox(
                           width: 75.w,
                           child: Text(
-                              weather.weatherCondition.toString(),
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                  fontSize: 14.sp,
-                                  height: 14 / 14,
-                                  fontWeight: FontWeight.w600))),
+                            weather.weatherCondition.toString(),
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: AppTextStyle().mainCard14spText,
+                          )),
                     ],
                   )
                 ],
@@ -96,35 +90,29 @@ class MainCard extends StatelessWidget {
                           children: [
                             Text(
                               'Wind:',
-                              style: TextStyle(
-                                  fontSize: 14.sp,
-                                  height: 14 / 14,
-                                  fontWeight: FontWeight.w600),
+                              style: AppTextStyle().mainCard14spText,
                             ),
                             SizedBox(
                               width: 4.w,
                             ),
-                            Text(weather.wind_kph.toString(),
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    height: 14 / 14,
-                                    fontWeight: FontWeight.w600)),
+                            Text(
+                              weather.wind_kph.toString(),
+                              style: AppTextStyle().mainCard14spText,
+                            ),
                             SizedBox(
                               width: 4.w,
                             ),
-                            Text('kmh,',
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    height: 14 / 14,
-                                    fontWeight: FontWeight.w600)),
+                            Text(
+                              'kmh,',
+                              style: AppTextStyle().mainCard14spText,
+                            ),
                             SizedBox(
                               width: 4.w,
                             ),
-                            Text(weather.wind_dir.toString(),
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    height: 14 / 14,
-                                    fontWeight: FontWeight.w600)),
+                            Text(
+                              weather.wind_dir.toString(),
+                              style: AppTextStyle().mainCard14spText,
+                            ),
                           ],
                         ),
                         SizedBox(
@@ -133,16 +121,12 @@ class MainCard extends StatelessWidget {
                         Row(
                           children: [
                             Text('Change of rain:',
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    height: 14 / 14,
-                                    fontWeight: FontWeight.w600)),
+                                style: AppTextStyle().mainCard14spText),
                             SizedBox(width: 4.w),
-                            Text('${weather.chance_of_rain}',
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    height: 14 / 14,
-                                    fontWeight: FontWeight.w600))
+                            Text(
+                              '${weather.chance_of_rain}',
+                              style: AppTextStyle().mainCard14spText,
+                            ),
                           ],
                         )
                       ],
@@ -159,27 +143,29 @@ class MainCard extends StatelessWidget {
                               width: 12.w,
                               height: 12.h,
                             ),
-                            SizedBox(width: 2.w,),
-                            Text('${weather.max_tempCelsium_of_day}°',
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    height: 14 / 14,
-                                    fontWeight: FontWeight.w600)),
+                            SizedBox(
+                              width: 2.w,
+                            ),
+                            Text(
+                              '${weather.max_tempCelsium_of_day}°',
+                              style: AppTextStyle().mainCard14spText,
+                            ),
                           ],
                         ),
                         Row(
                           children: [
                             SvgPicture.asset(
                               'assets/icons/arrow_down.svg',
-                              height: 12.h,
                               width: 12.w,
+                              height: 12.h,
                             ),
-                            SizedBox(width: 2.w,),
-                            Text('${weather.min_tempCelsium_of_day}°',
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    height: 14 / 14,
-                                    fontWeight: FontWeight.w600)),
+                            SizedBox(
+                              width: 2.w,
+                            ),
+                            Text(
+                              '${weather.min_tempCelsium_of_day}°',
+                              style: AppTextStyle().mainCard14spText,
+                            ),
                           ],
                         )
                       ],
