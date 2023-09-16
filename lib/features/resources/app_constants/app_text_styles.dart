@@ -60,4 +60,17 @@ class AppTextStyle {
       height: 24 / 24,
       fontWeight: FontWeight.bold,
       color: AppColors.darkColor);
+
+  final cityNameNotFoundText = TextStyle(
+      fontSize: 24.sp,
+      height: 24 / 24,
+      color: AppColors.darkColor,
+      fontWeight: FontWeight.w600);
+
+  final pleaseEnterCorrectName = TextStyle(
+      fontSize: 16.sp,
+      height: 16 / 16,
+      color: AppColors.darkColor,
+      fontWeight: FontWeight.w500,
+      decoration: TextDecoration.underline);
 }
