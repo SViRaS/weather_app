@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:weather/features/domain/repositories/weather_repository.dart';
 import 'package:weather/features/presentation/weather_screen/widgets/app_bar_text_widget.dart';
 import 'package:weather/features/presentation/weather_screen/widgets/day_container.dart';
 import 'package:weather/features/presentation/weather_screen/widgets/main_card_widget.dart';
@@ -24,8 +25,7 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-  final weatherBloc = WeatherBloc(WeatherRepositoryImpl());
-
+  final weatherBloc = WeatherBloc(WeatherRepository());
   @override
   void initState() {
     super.initState();
