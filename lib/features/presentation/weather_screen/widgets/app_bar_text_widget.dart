@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../../repositories/weather_repository/models/weather_model.dart';
-import '../../../../resources/app_constants/resources_app.dart';
+import '../../../domain/entities/weather_entity.dart';
+import '../../../../common/app_constants/resources_app.dart';
 
 
 class AppBarText extends StatelessWidget {
-  WeatherModel weather;
+  WeatherEntity weather;
 
   AppBarText(this.weather, {super.key});
 

@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:weather/features/presentation/pages/weather_screen/widgets/widgets.dart';
-import '../../../../repositories/weather_repository/weather_repository.dart';
+import 'package:weather/features/presentation/weather_screen/widgets/app_bar_text_widget.dart';
+import 'package:weather/features/presentation/weather_screen/widgets/day_container.dart';
+import 'package:weather/features/presentation/weather_screen/widgets/main_card_widget.dart';
+import '../../data/repositories/weather_repository.dart';
 import 'bloc/weather_bloc.dart';
-import 'package:weather/features/resources/app_constants/resources_app.dart';
+import 'package:weather/common/app_constants/resources_app.dart';
 
 class WeatherScreen extends StatefulWidget {
   final locationWeather;
@@ -22,7 +24,7 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-  final weatherBloc = WeatherBloc(WeatherRepository());
+  final weatherBloc = WeatherBloc(WeatherRepositoryImpl());
 
   @override
   void initState() {
@@ -102,7 +104,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     height: 16.h,
                   ),
                   DayContainer(
-                    weather_date: weatherModel.date_2th_day!.toInt(),
+                    weather_date: weatherModel.date_2th_day.toInt(),
                     weather_networkImage:
                         weatherModel.networkImage_2th_day.toString(),
                     weather_tempCelsium:
@@ -112,7 +114,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     height: 8.h,
                   ),
                   DayContainer(
-                    weather_date: weatherModel.date_3th_day!.toInt(),
+                    weather_date: weatherModel.date_3th_day.toInt(),
                     weather_networkImage:
                         weatherModel.networkImage_3th_day.toString(),
                     weather_tempCelsium:

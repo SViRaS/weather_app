@@ -4,12 +4,15 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:weather/features/resources/weather_constants.dart';
-import 'package:weather/features/resources/location.dart';
-import 'package:weather/repositories/weather_repository/models/weather_model.dart';
+import 'package:weather/common/weather_constants.dart';
+import 'package:weather/common/location.dart';
+import 'package:weather/features/data/models/weather_model.dart';
+import 'package:weather/features/domain/entities/weather_entity.dart';
+import 'package:weather/features/domain/repositories/weather_repository.dart';
 
-class WeatherRepository {
-  Future<WeatherModel> getWeather(
+class WeatherRepositoryImpl implements WeatherRepository {
+  @override
+  Future<WeatherEntity> getWeather(
       {String? cityName, bool? isCity}) async {
     
     Location location = Location();

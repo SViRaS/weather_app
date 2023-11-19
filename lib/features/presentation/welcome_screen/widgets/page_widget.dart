@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../resources/app_constants/resources_app.dart';
+import '../../../../common/app_constants/resources_app.dart';
 
 class PageWidget extends StatelessWidget {
   const PageWidget({super.key});

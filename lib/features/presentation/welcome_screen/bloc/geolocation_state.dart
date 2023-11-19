@@ -12,7 +12,7 @@ class GeolocationLoading extends GeolocationState {}
 
 class GeolocationLoaded extends GeolocationState {
   GeolocationLoaded(this.locationWeather);
-  final WeatherModel locationWeather;
+  final WeatherEntity locationWeather;
 
   @override
   List<Object> get props => [locationWeather];

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:weather/features/resources/app_constants/resources_app.dart';
+import 'package:weather/common/app_constants/resources_app.dart';
 
 class AppDecorations {
   final textFieldDecoration = InputDecoration(

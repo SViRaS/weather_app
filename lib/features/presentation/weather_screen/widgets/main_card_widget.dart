@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'package:weather/features/resources/app_constants/resources_app.dart';
-import '../../../../../repositories/weather_repository/models/weather_model.dart';
+import 'package:weather/common/app_constants/resources_app.dart';
+import '../../../domain/entities/weather_entity.dart';
 
 class MainCard extends StatelessWidget {
-  WeatherModel weather;
+  WeatherEntity weather;
   MainCard(this.weather, {super.key});
 
   @override
@@ -45,7 +45,7 @@ class MainCard extends StatelessWidget {
                             Text(
                                 DateUtil.formattedDate_EEEE_MMM(
                                     DateTime.fromMillisecondsSinceEpoch(
-                                        weather.date! * 1000)),
+                                        weather.date * 1000)),
                                 style: AppTextStyle().mainCard16spText),
                           ],
                         ),
