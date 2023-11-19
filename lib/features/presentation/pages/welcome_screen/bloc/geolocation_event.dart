@@ -1,7 +1,9 @@
 part of 'geolocation_bloc.dart';
 
 @immutable
-sealed class GeolocationEvent {}
-
-class DefinitionGeolocation extends GeolocationEvent {
+sealed class GeolocationEvent extends Equatable {
+  @override
+  List<Object> get props => [];
 }
+
+class DefinitionGeolocation extends GeolocationEvent {}

@@ -84,6 +84,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
         bloc: weatherBloc,
         builder: (context, state) {
           if (state is WeatherLoaded) {
+            final weatherModel = state.weatherModel;
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: ListView(
@@ -91,7 +92,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   SizedBox(
                     height: 16.h,
                   ),
-                  MainCard(state.weatherModel),
+                  MainCard(weatherModel),
                   SizedBox(
                     height: 24.h,
                   ),
@@ -101,21 +102,21 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     height: 16.h,
                   ),
                   DayContainer(
-                    weather_date: state.weatherModel.date_2th_day!.toInt(),
+                    weather_date: weatherModel.date_2th_day!.toInt(),
                     weather_networkImage:
-                        state.weatherModel.networkImage_2th_day.toString(),
+                        weatherModel.networkImage_2th_day.toString(),
                     weather_tempCelsium:
-                        state.weatherModel.tempCelsium_2th_day.toString(),
+                        weatherModel.tempCelsium_2th_day.toString(),
                   ),
                   SizedBox(
                     height: 8.h,
                   ),
                   DayContainer(
-                    weather_date: state.weatherModel.date_3th_day!.toInt(),
+                    weather_date: weatherModel.date_3th_day!.toInt(),
                     weather_networkImage:
-                        state.weatherModel.networkImage_3th_day.toString(),
+                        weatherModel.networkImage_3th_day.toString(),
                     weather_tempCelsium:
-                        state.weatherModel.tempCelsium_3th_day.toString(),
+                        weatherModel.tempCelsium_3th_day.toString(),
                   ),
                   SizedBox(
                     height: 8.h,
