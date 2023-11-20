@@ -1,7 +1,7 @@
-import 'package:weather/features/presentation/search_weather_screen/search_weather_screen.dart';
+import 'package:weather/features/presentation/search/view/search_weather_screen.dart';
 
-import '../features/presentation/weather_screen/weather_screen.dart';
-import '../features/presentation/welcome_screen/welcome_screen.dart';
+import '../features/presentation/weather/view/view.dart';
+import '../features/presentation/welcome/view/view.dart';
 
 
 final routes = {

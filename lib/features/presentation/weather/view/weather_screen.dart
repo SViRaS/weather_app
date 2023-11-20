@@ -6,12 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:weather/features/domain/repositories/weather_repository.dart';
-import 'package:weather/features/presentation/weather_screen/widgets/app_bar_text_widget.dart';
-import 'package:weather/features/presentation/weather_screen/widgets/day_container.dart';
-import 'package:weather/features/presentation/weather_screen/widgets/main_card_widget.dart';
-import '../../data/repositories/weather_repository.dart';
-import 'bloc/weather_bloc.dart';
+import '../bloc/weather_bloc.dart';
 import 'package:weather/common/app_constants/resources_app.dart';
+
+import '../widgets/widgets.dart';
 
 class WeatherScreen extends StatefulWidget {
   final locationWeather;
@@ -26,8 +24,9 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-
+  
   final weatherBloc = WeatherBloc(GetIt.I<AbstractWeatherRepository>());
+
   @override
   void initState() {
     super.initState();
