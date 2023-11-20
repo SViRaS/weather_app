@@ -16,7 +16,7 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  final geolocationBloc = GeolocationBloc(WeatherRepositoryImpl());
+  final geolocationBloc = GeolocationBloc(WeatherRepository());
 
   @override
   void initState() {

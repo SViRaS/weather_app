@@ -10,7 +10,7 @@ import 'package:weather/features/data/models/weather_model.dart';
 import 'package:weather/features/domain/entities/weather_entity.dart';
 import 'package:weather/features/domain/repositories/weather_repository.dart';
 
-class WeatherRepositoryImpl implements WeatherRepository {
+class WeatherRepository implements AbstractWeatherRepository {
   @override
   Future<WeatherEntity> getWeather(
       {String? cityName, bool? isCity}) async {
