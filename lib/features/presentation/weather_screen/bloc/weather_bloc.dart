@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:weather/features/domain/repositories/weather_repository.dart';
 
 import '../../../domain/entities/weather_entity.dart';
-import '../../../domain/usecases/get_weather.dart';
 
 part 'weather_event.dart';
 part 'weather_state.dart';

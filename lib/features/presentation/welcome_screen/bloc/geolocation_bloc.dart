@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-import 'package:weather/features/data/repositories/weather_repository.dart';
 
 import '../../../domain/entities/weather_entity.dart';
 import '../../../domain/repositories/weather_repository.dart';
@@ -17,12 +16,10 @@ class GeolocationBloc extends Bloc<GeolocationEvent, GeolocationState> {
   final AbstractWeatherRepository weatherRepository;
 
   void _onDefinitionGeolocation(
-  GeolocationEvent event,
-  Emitter<GeolocationState> emit,
+    GeolocationEvent event,
+    Emitter<GeolocationState> emit,
   ) async {
-  final geolocationData = await weatherRepository.getWeather();
-  emit(GeolocationLoaded(geolocationData));
+    final geolocationData = await weatherRepository.getWeather();
+    emit(GeolocationLoaded(geolocationData));
+  }
 }
-
-}
-
