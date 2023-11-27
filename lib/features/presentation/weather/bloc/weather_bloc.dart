@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:weather/features/domain/repositories/weather_repository.dart';
+import 'package:weather/features/domain/usecases/get_weather.dart';
 
 import '../../../domain/entities/weather_entity.dart';
 
@@ -12,7 +12,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   WeatherBloc(this.getWeather) : super(WeatherInitial()) {
     on<LoadWeatherData>(_onLoadWeatherData);
   }
-  final AbstractWeatherRepository getWeather;
+  final GetCurrentWeather getWeather;
 
   void _onLoadWeatherData(
     LoadWeatherData event,
@@ -20,8 +20,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   ) async {
     emit(WeatherLoading());
     try {
-      final weather = await getWeather.getWeather(
-          cityName: event.cityName, isCity: event.isCity);
+      final weather = await getWeather.call(event.cityName, event.isCity);
       emit(WeatherLoaded(weather));
     } catch (e) {
       emit(WeatherLoadingFailure(e));

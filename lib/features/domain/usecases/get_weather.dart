@@ -1,14 +1,12 @@
+import '../entities/weather_entity.dart';
+import '../repositories/weather_repository.dart';
 
+class GetCurrentWeather {
+  final AbstractWeatherRepository weatherRepository;
 
-// import '../entities/weather_entity.dart';
-// import '../repositories/weather_repository.dart';
+  GetCurrentWeather(this.weatherRepository);
 
-// class GetWeather {
-//   final AbstractWeatherRepository weatherRepository;
-
-//   GetWeather(this.weatherRepository);
-
-//   Future<WeatherEntity> call(String? cityName, bool? isCity) async {
-//     return await weatherRepository.getWeather();
-//   }
-// }
+  Future<WeatherEntity> call(String? cityName, bool? isCity) async {
+    return await weatherRepository.getCurrentWeather(cityName, isCity);
+  }
+}

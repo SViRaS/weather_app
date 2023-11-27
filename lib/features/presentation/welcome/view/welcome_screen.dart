@@ -2,9 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
+import 'package:http/http.dart';
+import 'package:weather/features/data/repositories/weather_repository.dart';
 import 'package:weather/features/domain/repositories/weather_repository.dart';
 
+import '../../../data/datasources/remote_data_source.dart';
+import '../../../domain/usecases/get_weather.dart';
 import '../../weather/view/view.dart';
 import '../bloc/geolocation_bloc.dart';
 import '../widgets/widgets.dart';
@@ -17,7 +20,7 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  final geolocationBloc = GeolocationBloc(GetIt.I<AbstractWeatherRepository>());
+  final geolocationBloc = GeolocationBloc(GetCurrentWeather(WeatherRepository(weatherRemoteDataSource: WeatherRemoteDataSource(client: Client()))));
 
   @override
   void initState() {
