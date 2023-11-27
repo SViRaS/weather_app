@@ -1,7 +1,5 @@
 // ignore_for_file: unnecessary_string_interpolations, prefer_typing_uninitialized_variables, non_constant_identifier_names, must_be_immutable\
 
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:http/http.dart';
 import 'package:weather/features/data/repositories/weather_repository.dart';
 import 'package:weather/features/domain/usecases/get_weather.dart';
+import 'package:weather/injection.dart';
 import '../../../data/datasources/remote_data_source.dart';
 import '../bloc/weather_bloc.dart';
 import 'package:weather/common/app_constants/resources_app.dart';
@@ -29,8 +28,7 @@ class WeatherScreen extends StatefulWidget {
 
 class _WeatherScreenState extends State<WeatherScreen> {
   
-  // final weatherBloc = locator<WeatherBloc>();
-  final weatherBloc = WeatherBloc(GetCurrentWeather(WeatherRepository(weatherRemoteDataSource: WeatherRemoteDataSource(client: Client()))));
+  final weatherBloc = locator<WeatherBloc>();
 
   @override
   void initState() {

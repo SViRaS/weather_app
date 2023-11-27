@@ -3,7 +3,6 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 import '../../../domain/entities/weather_entity.dart';
-import '../../../domain/repositories/weather_repository.dart';
 import '../../../domain/usecases/get_weather.dart';
 
 part 'geolocation_event.dart';

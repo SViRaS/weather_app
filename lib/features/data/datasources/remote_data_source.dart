@@ -11,7 +11,7 @@ abstract class AbstractWeatherRemoteDataSource {
   Future<WeatherModel> getCurrentWeather(String? cityName, bool? isCity);
 }
 
-class WeatherRemoteDataSource extends AbstractWeatherRemoteDataSource {
+class WeatherRemoteDataSource implements AbstractWeatherRemoteDataSource {
   final http.Client client;
 
   WeatherRemoteDataSource({required this.client});
